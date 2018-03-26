@@ -1,8 +1,11 @@
 /* 
  * Control car using bluetooth
  */
+
 #include <SoftwareSerial.h>
 
+#define RX 10
+#define TX 11
 #define IN1 3
 #define IN2 5
 #define IN3 6
@@ -46,7 +49,7 @@ void motor_2_back(int speed) {
   analogWrite(IN4, speed);
 }
 
-SoftwareSerial mySerial(10, 11); // RX, TX
+SoftwareSerial mySerial(RX, TX); // RX, TX
 
 void setup() {
   Serial.begin(9600);
